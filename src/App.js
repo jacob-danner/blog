@@ -1,7 +1,10 @@
+import { Blog } from "./Components/Blog";
+
 function App() {
+  // getBlogs()
   return (
     <>
-      hello 
+      <Blog slug="reward-is-enough" />
     </>
   )
 }
