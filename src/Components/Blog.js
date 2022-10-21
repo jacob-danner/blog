@@ -1,10 +1,10 @@
 import { useBlog } from "../Hooks"
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { useParams } from "react-router-dom";
 
-const Blog = ({slug}) => {
+const Blog = () => {
+    const { slug } = useParams() // pull parameters from url to get the slug identifier
     const [blog, isLoading] = useBlog(slug)
-
-    console.log(blog, isLoading)
     
     const buildHTML = () => {
         if (isLoading) return <p>Loading...</p>
@@ -15,14 +15,12 @@ const Blog = ({slug}) => {
                 <h1 id="title">{blog.fields.title}</h1><br />
                 <h3 id="date">{blog.fields.date}</h3>
                 {body}
-
             </>
         )
     }
 
     return (
         <>
-            <h1>this is a blog post!</h1>
             {buildHTML()}
         </>
     )

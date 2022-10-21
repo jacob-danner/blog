@@ -1,3 +1,4 @@
 import { useBlog } from "./useBlog";
+import { useBlogs } from "./useBlogs";
 
-export { useBlog }
+export { useBlog, useBlogs }

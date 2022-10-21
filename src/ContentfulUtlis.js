@@ -7,8 +7,7 @@ const client = contentful.createClient({
 
 const getBlogs = async () => {
     const response = await client.getEntries()
-    console.log(response)
-    console.log(response.items)
+    return response.items
 }
 
 const getBlog = async (slug) => {
