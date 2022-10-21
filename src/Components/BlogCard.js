@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 
 const BlogCard = ({title, date, slug}) => {
+    console.log(slug)
     return (
         <>
             <div id={slug}>

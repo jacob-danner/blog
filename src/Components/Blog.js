@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 
 const Blog = () => {
     const { slug } = useParams() // pull parameters from url to get the slug identifier
+    console.log(slug)
     const [blog, isLoading] = useBlog(slug)
     
     const buildHTML = () => {
