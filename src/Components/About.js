@@ -1,6 +1,8 @@
 export const About = () => {
     return (
         <div className="AboutPage">
+            <h2>Source Code</h2>
+            <a href="https://github.com/jacob-danner/blog">github link</a>
             <h2>About the blog: </h2>
             <p>This blog was created as part of an independent study where I read research papers. I've learned a ton! Special thanks to Dr. Urness for supervising this independent study and allowing this to happen.</p>
             <h2> Ways to improve this in the future:</h2>
