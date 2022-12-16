@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { NavBar, Blogs, Blog } from './Components'
+import { NavBar, Blogs, Blog, About, Homepage } from './Components'
 
 function App() {
   return (
@@ -8,7 +8,8 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route path="/" element={"homepage"} />
+        <Route path="/" element={<Homepage /> } />
+        <Route path="/about" element={<About /> } />
         <Route path="/blog" element={<Blogs />} />
         <Route path="/blog/:slug" element={<Blog />} />
         <Route path="/test" element={"test"} />

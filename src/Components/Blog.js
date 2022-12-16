@@ -1,22 +1,22 @@
 import { useBlog } from "../Hooks"
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import ReactMarkdown from 'react-markdown'
 import { useParams } from "react-router-dom";
+import { Heading } from "./Heading";
 
 const Blog = () => {
     const { slug } = useParams() // pull parameters from url to get the slug identifier
-    console.log(slug)
     const [blog, isLoading] = useBlog(slug)
     
     const buildHTML = () => {
-        if (isLoading) return <p>Loading...</p>
+        if (isLoading) return <p className="LoadingScreen">Loading...</p>
 
-        const body = documentToReactComponents(blog.fields.textContent)
         return (
-            <>
-                <h1 id="title">{blog.fields.title}</h1><br />
-                <h3 id="date">{blog.fields.date}</h3>
-                {body}
-            </>
+            <div className="BlogWrapper">
+                <Heading title={blog.fields.title} date={blog.fields.date} />
+                <ReactMarkdown>
+                    {blog.fields.markdownContent}
+                </ReactMarkdown>
+            </div>
         )
     }
 

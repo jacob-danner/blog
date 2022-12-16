@@ -5,21 +5,20 @@ const Blogs = () => {
     const [blogs, isLoading] = useBlogs()
 
     const buildHTML = () => {
-        if (isLoading) return <p>Loading...</p>
+        if (isLoading) return <p className="LoadingScreen">Loading...</p>
 
         return (
-            <>
 
-            {blogs.map(el => {
-                return <BlogCard title={el.fields.title} date={el.fields.date} slug={el.fields.slug} key={el.fields.slug} />
-            })}
-            </>
+            <div className="BlogsWrapper">
+                {blogs.map(el => {
+                    return <BlogCard title={el.fields.title} date={el.fields.date} slug={el.fields.slug} key={el.fields.slug} />
+                })}
+            </div>
         )
     }
 
     return (
         <>
-            blogs
             {buildHTML()}
         </>
     )

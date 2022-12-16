@@ -6,7 +6,7 @@ const client = contentful.createClient({
 });
 
 const getBlogs = async () => {
-    const response = await client.getEntries()
+    const response = await client.getEntries({'order': '-sys.createdAt'})
     return response.items
 }
 
