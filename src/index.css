@@ -422,23 +422,15 @@ pre code, pre tt {
 
 
 
-
-
-
 .BlogWrapper {
   width: 70%;
   margin: auto;
   border: 1px solid #cccccc;
   padding: 20px 20px;
   border-radius: 5px;
-  /* outline-color: #333;
-  outline: solid;
-  outline-width: 10px; */
 }
 
 .Heading {
-  /* text-align: end; */
-   /* #4183C4; */
   text-decoration: underline #4183C4;
   background-color: #f8f8f8;
   border: 1px solid #4183C4;
@@ -491,7 +483,6 @@ pre code, pre tt {
   align-items: center;
   justify-content:space-between;
   padding: 0 3% 
-  /* justify-content:center; */
 }
 
 .Homepage, .AboutPage {
@@ -502,7 +493,6 @@ pre code, pre tt {
   padding: 20px 20px;
   border-radius: 5px;
   background-color: #f8f8f8;
-  /* align-items: center; */
 }
 
 .LoadingScreen {
@@ -511,3 +501,13 @@ pre code, pre tt {
   font-size: large;
 }
 
+@media (max-width: 500px) {
+  h1, h2, h3, h4, h5, h6, a, p, ul, ol {
+    font-size: small;
+  }
+
+  .BlogCard {
+    margin-top: 3%;
+    margin-bottom: 3%;
+  }
+}
